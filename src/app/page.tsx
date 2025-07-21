@@ -69,7 +69,7 @@ export default function Home() {
                 onChange={(value) => updateInput('montoVentaObjetivo', value)}
                 type="currency"
                 placeholder="5,000"
-                error={getError('montoVentaObjetivo')}
+                error={getError('montoVentaObjetivo') || undefined}
                 tooltip={{
                   title: 'Monto de Venta Objetivo',
                   description: 'Total de ingresos que quieres generar en el período establecido'
@@ -83,7 +83,7 @@ export default function Home() {
                 onChange={(value) => updateInput('ticketPromedio', value)}
                 type="currency"
                 placeholder="60"
-                error={getError('ticketPromedio')}
+                error={getError("ticketPromedio") || undefined}
                 tooltip={{
                   title: 'Ticket Promedio',
                   description: 'Valor promedio de cada venta o transacción'
@@ -97,7 +97,7 @@ export default function Home() {
                 onChange={(value) => updateInput('porcentajeCAC', value)}
                 type="percentage"
                 placeholder="20"
-                error={getError('porcentajeCAC')}
+                error={getError("porcentajeCAC") || undefined}
                 tooltip={{
                   title: 'Porcentaje CAC',
                   description: 'Porcentaje de tus ingresos que estás dispuesto a invertir en adquisición de clientes'
@@ -111,7 +111,7 @@ export default function Home() {
                 onChange={(value) => updateInput('tasaConversionLeads', value)}
                 type="percentage"
                 placeholder="5"
-                error={getError('tasaConversionLeads')}
+                error={getError("tasaConversionLeads") || undefined}
                 tooltip={{
                   title: 'Tasa de Conversión de Leads',
                   description: 'Porcentaje de leads que se convierten en ventas (por defecto 5%)'

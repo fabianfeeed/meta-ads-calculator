@@ -77,7 +77,8 @@ export const PresetManager: React.FC<PresetManagerProps> = ({
           alert('Error al importar los datos');
         }
       } catch (error) {
-        alert('Error al leer el archivo');
+        console.error("Error reading or parsing file:", error);
+        alert("Error al leer el archivo");
       }
     };
     reader.readAsText(file);
