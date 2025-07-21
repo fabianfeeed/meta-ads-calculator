@@ -39,7 +39,7 @@ export const KpiCard: React.FC<KpiCardProps> = ({
     setIsEditing(false);
   };
 
-  const updateEditData = (field: keyof KpiData, value: any) => {
+  const updateEditData = <T extends keyof KpiData>(field: T, value: KpiData[T]) => {
     setEditData(prev => ({
       ...prev,
       [field]: value

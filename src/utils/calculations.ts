@@ -1,4 +1,4 @@
-import { CalculatorInputs, CalculatorResults, ValidationErrors, ROASStatus } from '@/types/calculator';
+import { CalculatorInputs, CalculatorResults, ROASStatus } from '@/types/calculator';
 import { roundToDecimals } from './formatters';
 
 /**

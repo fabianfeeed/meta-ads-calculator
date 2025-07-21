@@ -17,8 +17,8 @@ interface PresetManagerProps {
   onLoadPreset: (presetId: string) => void;
   onDeletePreset: (presetId: string) => void;
   onResetToDefault: () => void;
-  onExportData: () => any;
-  onImportData: (data: any) => boolean;
+  onExportData: () => KpiData | KpiPreset[];
+  onImportData: (data: KpiData | KpiPreset[]) => boolean;
   className?: string;
 }
 
@@ -69,7 +69,7 @@ export const PresetManager: React.FC<PresetManagerProps> = ({
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
-        const data = JSON.parse(e.target?.result as string);
+        const data: KpiData | KpiPreset[] = JSON.parse(e.target?.result as string);
         const success = onImportData(data);
         if (success) {
           alert('Datos importados exitosamente');

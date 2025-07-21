@@ -133,7 +133,7 @@ export const useKpiStore = () => {
   }, [kpiData, presets]);
 
   // Importar datos
-  const importData = useCallback((data: any) => {
+  const importData = useCallback((data: { kpiData?: KpiData; presets?: KpiPreset[] }) => {
     try {
       if (data.kpiData) {
         updateKpiData(data.kpiData);
