@@ -39,13 +39,15 @@ export const KpiCard: React.FC<KpiCardProps> = ({
     setIsEditing(false);
   };
 
-  const updateEditData = <T extends keyof KpiData>(field: T, value: KpiData[T]) => {
-    setEditData(prev => ({
-      ...prev,
-      [field]: value
-    }));
-  };
-
+  const updateEditData = <T extends keyof KpiData>(
+  field: T,
+  value: KpiData[T]
+) => {
+  setEditData(prev => ({
+    ...prev,
+    [field]: value,
+  }));
+};
   const formatCurrency = (value: number): string => {
     return `S/. ${value.toFixed(2)}`;
   };
